@@ -21,7 +21,7 @@ public:
     void dragBoat(Boat* boat) {
         this->boat = boat;
         orient = boat->orient;
-        startPos = boat->rectangle.getPosition();
+        startPos = boat->sprite.getPosition();
         drag = true;
     }
     void undrag() {

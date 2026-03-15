@@ -5,19 +5,24 @@
 #include <vector>
 class Game {
 private:
+    enum class GameStatus {none,play};
+        GameStatus gamestatus = GameStatus::play;
         enum class blockedCell { add, remove };
         BoatManager manager;
         DragBoat dragboat;
         void setBlocked(const std::vector<std::pair<int, int>>& vec, Game::blockedCell status);
         void setPos();
         void changeOrientation(Boat* boat);
-        std::vector<std::pair<int, int>> findOrientation(int x, int y, const Boat* boat, Boat::orientationBoat status);
+        std::vector<std::pair<int, int>> findOrientation(const int& x, const int& y, const Boat* boat, Boat::orientationBoat status);
         void initField();
         void setBoatToMap(const std::vector<std::pair<int, int>>& vec, Boat* boat);
         bool checkIntersectBoat(const std::vector<std::pair<int, int>>& vec);
         sf::FloatRect cordToPos(Boat* boat, int& i, int& j);
-        std::vector<std::pair<int, int>> cordToMap(int x, int y, const Boat* boat);
+        std::vector<std::pair<int, int>> cordToMap(const int& x, const int& y, const Boat* boat);
+        void hitToEnemyCheck(const int& i, const int& j);
+        float timeRotate;
 public:
+        void updateTimerRotate(float time);
         std::vector<Boat*> getBoats();
         std::vector<std::vector<Cell>> playerField;
         std::vector<std::vector<int>> enemyField;

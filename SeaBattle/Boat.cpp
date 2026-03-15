@@ -32,11 +32,11 @@ void Boat::setPos(const sf::Vector2f& v2) {
 
 	sf::Vector2f center(rect.left + rect.width / 2.f, rect.top + rect.height / 2.f);
 	sprite.setPosition(center);
-	rectangle.setPosition(center);
 }
 void Boat::setPos(const sf::FloatRect& v2) {
 	rect = v2;
 	sf::Vector2f center(rect.left + rect.width / 2.f, rect.top + rect.height / 2.f);
+	std::cout << "left: " << v2.left << " " << "top" << v2.top<<std::endl;
 	sprite.setPosition(center);
 }
 bool Boat::getHit() {

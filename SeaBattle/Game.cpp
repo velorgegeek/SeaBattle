@@ -9,8 +9,37 @@ void Game::setPos() {
     int j = round((dragboat.boat->rect.top - offsetY) / sizeSquare);
 
     bool fits = false;
-    if (i < 0 || j < 0 || i >10 || j>10) {
-        dragboat.boat->setPos(dragboat.getPos());
+    if (i < 0 || j < 0 || i >9 || j>9) {
+        if (dragboat.orient != dragboat.boat->orient) {
+            dragboat.changeOrientation();
+        }
+        sf::FloatRect rect;
+        auto pair_vec = dragboat.boat->cordinMap;
+        if (pair_vec.empty()) {
+            dragboat.boat->setPos(dragboat.getPos());
+            dragboat.undrag();
+            return;
+        }
+        if (dragboat.boat->orient == Boat::orientationBoat::Horizontal) {
+            rect = sf::FloatRect(offsetX + pair_vec[0].first * sizeSquare,
+                offsetY + pair_vec[0].second * sizeSquare,
+                sizeSquare * dragboat.boat->countDeck,
+                sizeSquare);
+        }
+        else {
+           rect = sf::FloatRect(offsetX + pair_vec[0].first * sizeSquare,
+                offsetY + pair_vec[0].second * sizeSquare,
+                sizeSquare,
+                sizeSquare * dragboat.boat->countDeck);
+
+        }
+        dragboat.boat->setPos(rect);
+
+        setBoatToMap(pair_vec, dragboat.boat);
+        setBlocked(pair_vec, Game::blockedCell::add);
+
+        dragboat.undrag();
+        return;
     }
 
 
@@ -53,18 +82,33 @@ void Game::setPos() {
         setBlocked(vec, Game::blockedCell::add);
         dragboat.boat->setPos(newRect);
     }else{
-        sf::Vector2f vec2 = dragboat.getPos();
-        if (dragboat.orient != dragboat.boat->orient){ 
-            if (dragboat.orient == Boat::orientationBoat::Horizontal) {
-
-                vec2.y += sizeSquare / 2.f;
-            }
-            else {
-                vec2.x += sizeSquare / 2.f;
-            }
+        if (dragboat.orient != dragboat.boat->orient) {
+            dragboat.changeOrientation();
         }
-        dragboat.orient = dragboat.boat->orient;
-        dragboat.boat->setPos(vec2);
+        sf::FloatRect rect;
+        auto pair_vec = dragboat.boat->cordinMap;
+        if (pair_vec.empty()) {
+            dragboat.boat->setPos(dragboat.getPos());
+            dragboat.undrag();
+            return;
+        }
+        if (dragboat.boat->orient == Boat::orientationBoat::Horizontal) {
+            rect = sf::FloatRect(offsetX + pair_vec[0].first * sizeSquare,
+                offsetY + pair_vec[0].second * sizeSquare,
+                sizeSquare * dragboat.boat->countDeck,
+                sizeSquare);
+        }
+        else {
+            rect = sf::FloatRect(offsetX + pair_vec[0].first * sizeSquare,
+                offsetY + pair_vec[0].second * sizeSquare,
+                sizeSquare,
+                sizeSquare * dragboat.boat->countDeck);
+
+        }
+        dragboat.boat->setPos(rect);
+
+        setBoatToMap(pair_vec, dragboat.boat);
+        setBlocked(pair_vec, Game::blockedCell::add);
     }
     dragboat.undrag();
 }
@@ -74,20 +118,25 @@ void Game::setBoatToMap(const std::vector<std::pair<int, int>>& vec,  Boat* boat
     }
 } 
 void Game::changeOrientation(Boat* boat) {
+    if (boat->countDeck == 0) {
+        boat->changeOrientation();
+        return;
+    }
     int i = round((boat->rect.left - offsetX) / sizeSquare);
     int j = round((boat->rect.top - offsetY) / sizeSquare);
+
     setBlocked(boat->cordinMap, Game::blockedCell::remove);
     setBoatToMap(boat->cordinMap, nullptr);
+
     auto indexBoat = findOrientation(i, j, boat, (boat->orient == Boat::orientationBoat::Horizontal)
         ? Boat::orientationBoat::Vertical : Boat::orientationBoat::Horizontal);
+
     if (!indexBoat.empty()) {
         boat->cordinMap = indexBoat;
         boat->changeOrientation();
-        boat->rect = cordToPos(boat, indexBoat[0].first, indexBoat[0].second);
-        sf::Vector2f center(boat->rect.left + boat->rect.width / 2.f,
-            boat->rect.top + boat->rect.height / 2.f);
-        boat->rectangle.setPosition(center);
+        boat->setPos(cordToPos(boat, indexBoat[0].first, indexBoat[0].second));
     }
+
     setBoatToMap(boat->cordinMap, boat);
     setBlocked(boat->cordinMap, Game::blockedCell::add);
    
@@ -107,34 +156,52 @@ sf::FloatRect Game::cordToPos(Boat* boat, int& i, int& j) {
             sizeSquare * boat->countDeck);
     }
 }
+void Game::hitToEnemyCheck(const int& i, const int& j) {
+    if (enemyField[i][j] == 0) {
+        //attack
+    }
+}
 void Game::eventHandler(const sf::Event& event, const sf::RenderWindow& window) {
     if (event.type == sf::Event::MouseButtonPressed) {
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
             sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
             sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
-            for (auto i : manager.getBoats()) {
-                if (i->rectangle.getGlobalBounds().contains(worldPos)) {
-                    dragboat.dragBoat(i);
-                    if (!dragboat.boat->cordinMap.empty()) {
-                        setBoatToMap(dragboat.boat->cordinMap, nullptr);
-                        setBlocked(dragboat.boat->cordinMap, Game::blockedCell::remove);
+            switch (gamestatus) {
+            case GameStatus::none:
+                for (auto i : manager.getBoats()) {
+                    if (i->sprite.getGlobalBounds().contains(worldPos)) {
+                        dragboat.dragBoat(i);
+                        if (!dragboat.boat->cordinMap.empty()) {
+                            setBoatToMap(dragboat.boat->cordinMap, nullptr);
+                            setBlocked(dragboat.boat->cordinMap, Game::blockedCell::remove);
+                        }
+                        break;
                     }
-                    break;
                 }
+                break;
+            case GameStatus::play:
+                if((worldPos.x < offsetEnemyX || worldPos.x > offsetEnemyX + (sizeSquare * 10))
+                    || (worldPos.y < offsetEnemyY || worldPos.y > offsetEnemyY + (sizeSquare * 10))) return;
+                std::cout << static_cast<int>((worldPos.x - offsetEnemyX) / sizeSquare)<<std::endl;
+                std::cout << static_cast<int>((worldPos.y - offsetEnemyY) / sizeSquare) << std::endl;
+                break;
             }
         }
     }
     else if (event.type == sf::Event::KeyPressed) {
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
-            if (dragboat.boat != nullptr) {
-                dragboat.changeOrientation();
-            }
-            else {
-                sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
-                sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
-                for (auto i : manager.getBoats()) {
-                    if (i->rect.contains(worldPos)) {
-                        changeOrientation(i);
+        if (timeRotate >= rotateTime) {
+            timeRotate = 0;
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
+                if (dragboat.boat != nullptr) {
+                    dragboat.changeOrientation();
+                }
+                else {
+                    sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                    sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                    for (auto i : manager.getBoats()) {
+                        if (i->sprite.getGlobalBounds().contains(worldPos)) {
+                            changeOrientation(i);
+                        }
                     }
                 }
             }
@@ -199,8 +266,8 @@ void Game::setBlocked(const std::vector<std::pair<int, int>>& vec,Game::blockedC
         else {
             playerField[i.first][i.second].downCountBlocked();
         }
-        std::cout << "x:" << i.first << " y:" << i.second << " " << "green" << "\n"
-            << "count: " << playerField[i.first][i.second].countBlocked << std::endl;
+        //std::cout << "x:" << i.first << " y:" << i.second << " " << "green" << "\n"
+        //    << "count: " << playerField[i.first][i.second].countBlocked << std::endl;
     }
 }
 std::vector<std::pair<int, int>> Game::findOrientation(int x, int y,const Boat* boat, Boat::orientationBoat status) {
@@ -211,10 +278,12 @@ std::vector<std::pair<int, int>> Game::findOrientation(int x, int y,const Boat* 
     switch (status) {
     case Boat::orientationBoat::Horizontal:
         if (x1 + count-1 >9) {
-            x1 = x1 -count-1-9;
+            x1 -= (x1+count-1) -9;
         }
         for (int i = 0; i < count; i++) {
-            y1+=i;
+            if (i > 0) {
+                y1++;
+            }
             if (y1 > 9) {
                 return {};
             }
@@ -230,6 +299,10 @@ std::vector<std::pair<int, int>> Game::findOrientation(int x, int y,const Boat* 
                     if (playerField[xk][y1].boat == nullptr && playerField[xk][y1]._status == Cell::status::none) {
                         indexBoat.push_back(std::make_pair(xk, y1));
                     }
+                    else {
+                        indexBoat.clear();
+                        break;
+                    }
                 }
             }
             if (!indexBoat.empty()) {
@@ -239,11 +312,13 @@ std::vector<std::pair<int, int>> Game::findOrientation(int x, int y,const Boat* 
         break;
     case Boat::orientationBoat::Vertical:
         if (y1 + count - 1 > 9) {
-            y1 = y1 - count - 1 - 9;
+            y1 -= (y1 + count - 1) - 9;
         }
         for (int i = 0; i <count; i++) {
-            x1 += i;
-            if (x > 9) {
+            if (i > 0) {
+                x1++;
+            }
+            if (x1 > 9) {
                 return {};
             }
             if (playerField[x1][y1 + count - 1].boat == nullptr
@@ -255,8 +330,12 @@ std::vector<std::pair<int, int>> Game::findOrientation(int x, int y,const Boat* 
                         indexBoat.clear();
                         break;
                     }
-                    if (playerField[x1][yk].boat == nullptr || playerField[x1][yk].boat == boat && playerField[x1][yk]._status == Cell::status::none) {
+                    if (playerField[x1][yk].boat == nullptr && playerField[x1][yk]._status == Cell::status::none) {
                         indexBoat.push_back(std::make_pair(x1,yk));
+                    }
+                    else {
+                        indexBoat.clear();
+                        break;
                     }
 
                 }
@@ -297,6 +376,15 @@ std::vector<std::pair<int, int>> Game::cordToMap(int x,int y,const Boat* boat) {
 void Game::initField() {
     playerField.resize(10, std::vector<Cell>(10));
     enemyField.resize(10, std::vector<int>(10));
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            enemyField[i][j] = 0;
+        }
+    }
+}
+void Game::updateTimerRotate(float time) {
+    float deltaSeconds = time / 1000000.0f;
+    timeRotate += deltaSeconds;
 }
 Game::Game() {
     initField();

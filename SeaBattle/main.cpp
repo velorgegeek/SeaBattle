@@ -15,7 +15,7 @@ int main()
     sf::RectangleShape hitbox;
     hitbox.setFillColor(sf::Color::Blue);
     sf::RectangleShape rectangle{sf::Vector2f(sizeBoat,sizeBoat*3)};
-    sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(1000, 800), "SFML works!");
     rectangle.setFillColor(sf::Color::Black);
     rectangle.setPosition(52, 50+5);
     sf::RectangleShape rectangle2{ sf::Vector2f(sizeSquare,sizeSquare) };
@@ -23,8 +23,12 @@ int main()
     rectangle.setOrigin(rectangle.getSize().x/2, rectangle.getSize().y/2);
     rectangle2.setOutlineThickness(1);
     rectangle2.setOutlineColor(sf::Color::Black);
-    
+    sf::Clock clock;
+
     while(window.isOpen()) {
+        float time = clock.getElapsedTime().asMicroseconds();
+        clock.restart();
+        game.updateTimerRotate(time);
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
@@ -51,6 +55,26 @@ int main()
                 window.draw(rectangle2);
             }
         }
+        for (int i = 0; i < 10; ++i) {
+            for (int j = 0; j < 10; ++j) {
+                switch (game.enemyField[i][j]) {
+                case 0:
+                    rectangle2.setFillColor(sf::Color::Yellow);
+                    break;
+                case 1:
+                    rectangle2.setFillColor(sf::Color(255, 0, 0));
+                    break;
+                case 2:
+                    rectangle2.setFillColor(sf::Color::Blue);
+                    break;
+                case 3:
+                    rectangle2.setFillColor(sf::Color::Black);
+                    break;
+                }
+                rectangle2.setPosition(sizeSquare * i + offsetEnemyX, sizeSquare * j + offsetEnemyY);
+                window.draw(rectangle2);
+                }
+            }
         
         
         for (auto boat : game.getBoats()) {
