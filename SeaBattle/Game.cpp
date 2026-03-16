@@ -270,7 +270,7 @@ void Game::setBlocked(const std::vector<std::pair<int, int>>& vec,Game::blockedC
         //    << "count: " << playerField[i.first][i.second].countBlocked << std::endl;
     }
 }
-std::vector<std::pair<int, int>> Game::findOrientation(int x, int y,const Boat* boat, Boat::orientationBoat status) {
+std::vector<std::pair<int, int>> Game::findOrientation(const int& x, const int& y,const Boat* boat, Boat::orientationBoat status) {
     std::vector<std::pair<int, int>> indexBoat;
     int x1 = x;
     int y1 = y;
@@ -348,7 +348,7 @@ std::vector<std::pair<int, int>> Game::findOrientation(int x, int y,const Boat* 
     }
     return indexBoat;
 }
-std::vector<std::pair<int, int>> Game::cordToMap(int x,int y,const Boat* boat) {
+std::vector<std::pair<int, int>> Game::cordToMap(const int& x, const int& y, const Boat* boat) {
     std::vector<std::pair<int, int>> indexBoat;
     int count = boat->countDeck;
     switch (boat->orient) {

@@ -6,6 +6,7 @@
 class Game {
 private:
     enum class GameStatus {none,play};
+    //none,play,waiting,prepare
         GameStatus gamestatus = GameStatus::play;
         enum class blockedCell { add, remove };
         BoatManager manager;
