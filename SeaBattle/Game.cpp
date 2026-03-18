@@ -2,6 +2,7 @@
 #include "DragBoat.h"
 #include "constants.h"
 #include <iostream>
+#include "json.hpp"
 void Game::setPos() {
     int count = dragboat.boat->countDeck;
     
@@ -182,8 +183,14 @@ void Game::eventHandler(const sf::Event& event, const sf::RenderWindow& window) 
             case GameStatus::play:
                 if((worldPos.x < offsetEnemyX || worldPos.x > offsetEnemyX + (sizeSquare * 10))
                     || (worldPos.y < offsetEnemyY || worldPos.y > offsetEnemyY + (sizeSquare * 10))) return;
-                std::cout << static_cast<int>((worldPos.x - offsetEnemyX) / sizeSquare)<<std::endl;
-                std::cout << static_cast<int>((worldPos.y - offsetEnemyY) / sizeSquare) << std::endl;
+                int x = (worldPos.x - offsetEnemyX) / sizeSquare;
+                int y = (worldPos.y - offsetEnemyY) / sizeSquare;
+                json j = {
+                    {"x", x},
+                    {"y", y}
+                };
+                request.sender(j);
+
                 break;
             }
         }

@@ -3,8 +3,10 @@
 #include "Cell.h"
 #include "DragBoat.h"
 #include <vector>
+#include "RequestToServer.h"
 class Game {
 private:
+    RequestToServer request;
     enum class GameStatus {none,play};
     //none,play,waiting,prepare
         GameStatus gamestatus = GameStatus::play;
@@ -22,6 +24,11 @@ private:
         std::vector<std::pair<int, int>> cordToMap(const int& x, const int& y, const Boat* boat);
         void hitToEnemyCheck(const int& i, const int& j);
         float timeRotate;
+
+        //json Parser -> //zaprosChecker
+        //zaprosbuilder(string type,int i,int j) -> zaprosSender(json) 
+        //
+        //checkBoat(int i,int j) == 0 
 public:
         void updateTimerRotate(float time);
         std::vector<Boat*> getBoats();

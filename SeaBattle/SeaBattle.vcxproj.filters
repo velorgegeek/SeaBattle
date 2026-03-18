@@ -30,6 +30,9 @@
     <ClCompile Include="Game.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="RequestToServer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="sfml-window-2.dll" />
@@ -61,6 +64,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="RequestToServer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
