@@ -1,6 +1,8 @@
 #include "BoatManager.h"
 #include "Boat.h"
 #include <iostream>
+#include <filesystem>
+namespace fs = std::filesystem;
 void BoatManager::setSprite(const Boat* boat) {
 	//boat->
 }
@@ -15,8 +17,7 @@ BoatManager::BoatManager() {
 }
 void BoatManager::initBoat() {
 	boats.clear();
-	sf::Sprite sprite;
-	sprite.setTexture(textureBoats);
+	sf::Sprite sprite(textureBoats);
 
 	boats.push_back(new Boat(Boat::orientationBoat::Horizontal,textureBoats, 4));
 	std::cout << "4-х палубник добавлен";

@@ -1,5 +1,4 @@
-﻿
-#include <SFML/Graphics.hpp>
+﻿#include <SFML/Graphics.hpp>
 #include <iostream>
 #include "constants.h"
 #include "BoatManager.h"
@@ -15,12 +14,12 @@ int main()
     sf::RectangleShape hitbox;
     hitbox.setFillColor(sf::Color::Blue);
     sf::RectangleShape rectangle{sf::Vector2f(sizeBoat,sizeBoat*3)};
-    sf::RenderWindow window(sf::VideoMode(1000, 800), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode({ 1000,  800}), "SFML works!");
     rectangle.setFillColor(sf::Color::Black);
-    rectangle.setPosition(52, 50+5);
+    rectangle.setPosition({ 52, 50 + 5 });
     sf::RectangleShape rectangle2{ sf::Vector2f(sizeSquare,sizeSquare) };
     rectangle2.setFillColor(sf::Color::Blue);
-    rectangle.setOrigin(rectangle.getSize().x/2, rectangle.getSize().y/2);
+    rectangle.setOrigin({ rectangle.getSize().x / 2, rectangle.getSize().y / 2 });
     rectangle2.setOutlineThickness(1);
     rectangle2.setOutlineColor(sf::Color::Black);
     sf::Clock clock;
@@ -29,11 +28,13 @@ int main()
         float time = clock.getElapsedTime().asMicroseconds();
         clock.restart();
         game.updateTimerRotate(time);
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
+        while (const std::optional event = window.pollEvent())
+        {
+            // Close window: exit
+            if (event->is<sf::Event::Closed>()) {
                 window.close();
-            game.eventHandler(event, window);
+            }
+            game.eventHandler(&*event, window);
         }
 
         window.clear(sf::Color::White);
@@ -51,7 +52,7 @@ int main()
                 if (game.playerField[i][j].boat != nullptr) {
                     rectangle2.setFillColor(sf::Color::Red);
                 }
-                rectangle2.setPosition(sizeSquare * i + offsetX, sizeSquare * j + offsetY);
+                rectangle2.setPosition(sf::Vector2f( sizeSquare * i + offsetX, sizeSquare * j + offsetY ));
                 window.draw(rectangle2);
             }
         }
@@ -71,7 +72,7 @@ int main()
                     rectangle2.setFillColor(sf::Color::Black);
                     break;
                 }
-                rectangle2.setPosition(sizeSquare * i + offsetEnemyX, sizeSquare * j + offsetEnemyY);
+                rectangle2.setPosition(sf::Vector2f(sizeSquare * i + offsetEnemyX, sizeSquare * j + offsetEnemyY ));
                 window.draw(rectangle2);
                 }
             }

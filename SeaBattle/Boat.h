@@ -16,5 +16,4 @@ public:
 	void setPos(const sf::Vector2f& v2);
 	void setPos(const sf::FloatRect& v2);
 	Boat(const Boat::orientationBoat& orientation,const sf::Texture& texture,int count);
-	Boat(const Boat::orientationBoat& orientation, int count);
 };

@@ -6,8 +6,8 @@
 void Game::setPos() {
     int count = dragboat.boat->countDeck;
     
-    int i = round((dragboat.boat->rect.left - offsetX) / sizeSquare);
-    int j = round((dragboat.boat->rect.top - offsetY) / sizeSquare);
+    int i = round((dragboat.boat->rect.position.x - offsetX) / sizeSquare);
+    int j = round((dragboat.boat->rect.position.y - offsetY) / sizeSquare);
 
     bool fits = false;
     if (i < 0 || j < 0 || i >9 || j>9) {
@@ -22,16 +22,17 @@ void Game::setPos() {
             return;
         }
         if (dragboat.boat->orient == Boat::orientationBoat::Horizontal) {
-            rect = sf::FloatRect(offsetX + pair_vec[0].first * sizeSquare,
-                offsetY + pair_vec[0].second * sizeSquare,
-                sizeSquare * dragboat.boat->countDeck,
-                sizeSquare);
+            rect = sf::FloatRect(sf::Vector2f( offsetX + pair_vec[0].first * sizeSquare,
+                offsetY + pair_vec[0].second * sizeSquare ),
+                sf::Vector2f(sizeSquare * dragboat.boat->countDeck,
+                sizeSquare ));
         }
         else {
-           rect = sf::FloatRect(offsetX + pair_vec[0].first * sizeSquare,
-                offsetY + pair_vec[0].second * sizeSquare,
+            rect = sf::FloatRect(sf::Vector2f( offsetX + pair_vec[0].first * sizeSquare,
+                 offsetY + pair_vec[0].second * sizeSquare ),
+                sf::Vector2f(
                 sizeSquare,
-                sizeSquare * dragboat.boat->countDeck);
+                sizeSquare * dragboat.boat->countDeck ));
 
         }
         dragboat.boat->setPos(rect);
@@ -54,10 +55,11 @@ void Game::setPos() {
             vec = cordToMap(i, j, dragboat.boat);
             if (!checkIntersectBoat(vec)) {
                 fits = true;
-                newRect = sf::FloatRect(offsetX + i * sizeSquare,
-                    offsetY + j * sizeSquare,
-                    sizeSquare * dragboat.boat->countDeck,
-                    sizeSquare);
+                newRect = sf::FloatRect(sf::Vector2f( offsetX + i * sizeSquare,
+                    offsetY + j * sizeSquare ),
+                    sf::Vector2f(
+                     sizeSquare * dragboat.boat->countDeck,
+                    sizeSquare ));
             }
         }
     }
@@ -68,10 +70,10 @@ void Game::setPos() {
             vec = cordToMap(i, j, dragboat.boat);
             if (!checkIntersectBoat(vec)) {
                 fits = true;
-                newRect = sf::FloatRect(offsetX + i * sizeSquare,
-                    offsetY + j * sizeSquare,
-                    sizeSquare,
-                    sizeSquare * dragboat.boat->countDeck);
+                newRect = sf::FloatRect(sf::Vector2f( offsetX + i * sizeSquare,
+                    offsetY + j * sizeSquare ),
+                    sf::Vector2f( sizeSquare,
+                    sizeSquare * dragboat.boat->countDeck ));
             }
         }
     }
@@ -94,16 +96,16 @@ void Game::setPos() {
             return;
         }
         if (dragboat.boat->orient == Boat::orientationBoat::Horizontal) {
-            rect = sf::FloatRect(offsetX + pair_vec[0].first * sizeSquare,
-                offsetY + pair_vec[0].second * sizeSquare,
-                sizeSquare * dragboat.boat->countDeck,
-                sizeSquare);
+            rect = sf::FloatRect(sf::Vector2f(offsetX + pair_vec[0].first * sizeSquare,
+                offsetY + pair_vec[0].second * sizeSquare),
+                sf::Vector2f(sizeSquare,
+                    sizeSquare * dragboat.boat->countDeck));
         }
         else {
-            rect = sf::FloatRect(offsetX + pair_vec[0].first * sizeSquare,
-                offsetY + pair_vec[0].second * sizeSquare,
-                sizeSquare,
-                sizeSquare * dragboat.boat->countDeck);
+            rect = sf::FloatRect(sf::Vector2f(offsetX + pair_vec[0].first * sizeSquare,
+                offsetY + pair_vec[0].second * sizeSquare),
+                sf::Vector2f(sizeSquare,
+                    sizeSquare * dragboat.boat->countDeck));
 
         }
         dragboat.boat->setPos(rect);
@@ -123,8 +125,8 @@ void Game::changeOrientation(Boat* boat) {
         boat->changeOrientation();
         return;
     }
-    int i = round((boat->rect.left - offsetX) / sizeSquare);
-    int j = round((boat->rect.top - offsetY) / sizeSquare);
+    int i = round((boat->rect.position.x - offsetX) / sizeSquare);
+    int j = round((boat->rect.position.y - offsetY) / sizeSquare);
 
     setBlocked(boat->cordinMap, Game::blockedCell::remove);
     setBoatToMap(boat->cordinMap, nullptr);
@@ -144,17 +146,20 @@ void Game::changeOrientation(Boat* boat) {
 
 }
 sf::FloatRect Game::cordToPos(Boat* boat, int& i, int& j) {
-    if (boat->orient == Boat::orientationBoat::Horizontal) {
-         return sf::FloatRect(offsetX + i * sizeSquare,
-            offsetY + j * sizeSquare,
-            sizeSquare * boat->countDeck,
-            sizeSquare);
+    if (dragboat.boat->orient == Boat::orientationBoat::Horizontal) {
+        return sf::FloatRect(sf::Vector2f( offsetX + i * sizeSquare,
+            offsetY + j * sizeSquare ),
+            sf::Vector2f(
+            sizeSquare * dragboat.boat->countDeck,
+            sizeSquare ));
     }
     else {
-        return sf::FloatRect(offsetX + i * sizeSquare,
-            offsetY + j * sizeSquare,
+        return sf::FloatRect( sf::Vector2f( offsetX + i * sizeSquare,
+             offsetY + j * sizeSquare ),
+            sf::Vector2f(
             sizeSquare,
-            sizeSquare * boat->countDeck);
+            sizeSquare * dragboat.boat->countDeck ));
+
     }
 }
 void Game::hitToEnemyCheck(const int& i, const int& j) {
@@ -162,9 +167,9 @@ void Game::hitToEnemyCheck(const int& i, const int& j) {
         //attack
     }
 }
-void Game::eventHandler(const sf::Event& event, const sf::RenderWindow& window) {
-    if (event.type == sf::Event::MouseButtonPressed) {
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+void Game::eventHandler(const sf::Event* event, const sf::RenderWindow& window) {
+    if (const auto* MousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
+        if (MousePressed->button == sf::Mouse::Button::Left) {
             sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
             sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
             switch (gamestatus) {
@@ -195,10 +200,10 @@ void Game::eventHandler(const sf::Event& event, const sf::RenderWindow& window) 
             }
         }
     }
-    else if (event.type == sf::Event::KeyPressed) {
+    else if (const auto* KeyPressed = event->getIf<sf::Event::KeyPressed>()) {
         if (timeRotate >= rotateTime) {
             timeRotate = 0;
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
+            if (KeyPressed->scancode == sf::Keyboard::Scancode::V) {
                 if (dragboat.boat != nullptr) {
                     dragboat.changeOrientation();
                 }
@@ -214,14 +219,14 @@ void Game::eventHandler(const sf::Event& event, const sf::RenderWindow& window) 
             }
         }
     }
-    else if (event.type == sf::Event::MouseMoved) {
+    else if (const auto* MouseMoved = event->getIf<sf::Event::MouseMoved>()) {
         if (dragboat.drag) {
             sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
             sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
             dragboat.boat->setPos(sf::Vector2f{ worldPos.x, worldPos.y });
         }
     }
-    else if (event.type == sf::Event::MouseButtonReleased) {
+    else if (const auto* MouseReleased = event->getIf<sf::Event::MouseButtonReleased>()) {
         if (dragboat.drag) {
             setPos();
         }

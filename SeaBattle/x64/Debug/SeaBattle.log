@@ -1,3 +1,255 @@
-﻿  RequestToServer.cpp
+﻿  Boat.cpp
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(10,43): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(10,43): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(10,43): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(10,43): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(10,43): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(11,72): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(11,72): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(11,72): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(11,72): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(11,72): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(14,53): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(14,53): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(14,53): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(14,53): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(14,53): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(15,84): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(15,84): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(15,84): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(15,84): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(15,84): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(51,63): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(51,63): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(51,63): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(51,63): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(51,63): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(57,75): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(57,75): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(57,75): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(57,75): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Boat.cpp(57,75): warning C4244:         ]
+  BoatManager.cpp
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\BoatManager.cpp(15,27): warning C4834: удаление возвращаемого значения функции с атрибутом [[nodiscard]]
+  Cell.cpp
+  Game.cpp
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.h(33,21): error C2086: BoatManager Game::manager: переопределение
+  (компиляция исходного файла "Game.cpp")
+  
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(9,11): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(10,11): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(27,41): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(27,41): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(27,41): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(27,41): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(27,41): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(26,25): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(26,25): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(26,25): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(26,25): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(26,25): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(25,56): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(25,56): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(25,56): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(25,56): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(25,56): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(35,28): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(35,28): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(35,28): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(35,28): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(35,28): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(32,26): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(32,26): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(32,26): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(32,26): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(32,26): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(31,56): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(31,56): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(31,56): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(31,56): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(31,56): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(61,33): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(61,33): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(61,33): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(61,33): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(61,33): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(59,29): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(59,29): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(59,29): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(59,29): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(59,29): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(58,63): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(58,63): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(58,63): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(58,63): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(58,63): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(76,32): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(76,32): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(76,32): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(76,32): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(76,32): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(74,29): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(74,29): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(74,29): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(74,29): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(74,29): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(73,63): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(73,63): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(73,63): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(73,63): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(73,63): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(102,32): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(102,32): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(102,32): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(102,32): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(102,32): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(100,25): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(100,25): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(100,25): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(100,25): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(100,25): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(99,55): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(99,55): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(99,55): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(99,55): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(99,55): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(108,32): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(108,32): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(108,32): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(108,32): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(108,32): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(106,25): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(106,25): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(106,25): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(106,25): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(106,25): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(105,55): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(105,55): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(105,55): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(105,55): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(105,55): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(128,11): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(129,11): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(153,24): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(153,24): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(153,24): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(153,24): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(153,24): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(151,21): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(151,21): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(151,21): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(151,21): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(151,21): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(150,52): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(150,52): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(150,52): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(150,52): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(150,52): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(161,24): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(161,24): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(161,24): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(161,24): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(161,24): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(158,22): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(158,22): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(158,22): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(158,22): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(158,22): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(157,53): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(157,53): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(157,53): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(157,53): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(157,53): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(191,23): warning C4244: инициализация: преобразование "T" в "int", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(191,23): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(191,23): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(191,23): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(191,23): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(192,23): warning C4244: инициализация: преобразование "T" в "int", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(192,23): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(192,23): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(192,23): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.cpp(192,23): warning C4244:         ]
+  GameScenes.cpp
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.h(33,21): error C2086: BoatManager Game::manager: переопределение
+  (компиляция исходного файла "GameScenes.cpp")
+  
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(5,15): error C2084: функция "PrepareScene::PrepareScene(Game *)" уже имеет текст реализации
+      C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.h(6,2):
+      см. предыдущее определение "PrepareScene::PrepareScene"
+  
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(40,90): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(40,90): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(40,90): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(40,90): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(40,90): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(40,64): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(40,64): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(40,64): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(40,64): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(40,64): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(59,35): error C2248: Game::manager: невозможно обратиться к private член, объявленному в классе "Game"
+      C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.h(14,21):
+       см. объявление "Game::manager"
+      C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.h(7,7):
+       см. объявление "Game"
+  
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(61,25): error C2065: dragboat: необъявленный идентификатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(62,30): error C2065: dragboat: необъявленный идентификатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(63,42): error C2065: dragboat: необъявленный идентификатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(63,29): error C3861: setBoatToMap: идентификатор не найден
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(64,40): error C2065: dragboat: необъявленный идентификатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(64,85): error C2248: Game::blockedCell: невозможно обратиться к private enum, объявленному в классе "Game"
+      C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.h(13,20):
+       см. объявление "Game::blockedCell"
+      C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.h(7,7):
+       см. объявление "Game"
+  
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(64,29): error C3861: setBlocked: идентификатор не найден
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(75,21): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(81,13): error C2065: timeRotate: необъявленный идентификатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(82,13): error C2065: timeRotate: необъявленный идентификатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(84,21): error C2065: dragboat: необъявленный идентификатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(85,21): error C2065: dragboat: необъявленный идентификатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(90,35): error C2065: manager: необъявленный идентификатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(90,31): error C3531: i: символ, тип которого содержит спецификатор 'auto' должен иметь инициализатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(90,33): error C2143: синтаксическая ошибка: отсутствие ";" перед ":"
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(90,53): error C2143: синтаксическая ошибка: отсутствие ";" перед ")"
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(92,29): error C3861: changeOrientation: идентификатор не найден
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(100,17): error C2248: Game::dragboat: невозможно обратиться к private член, объявленному в классе "Game"
+      C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.h(15,18):
+       см. объявление "Game::dragboat"
+      C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.h(7,7):
+       см. объявление "Game"
+  
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(103,13): error C2065: dragboat: необъявленный идентификатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(107,13): error C2065: dragboat: необъявленный идентификатор
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\GameScenes.cpp(108,13): error C3861: setPos: идентификатор не найден
+  main.cpp
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\Game.h(33,21): error C2086: BoatManager Game::manager: переопределение
+  (компиляция исходного файла "main.cpp")
+  
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(28,20): warning C4244: инициализация: преобразование "int64_t" в "float", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(55,95): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(55,95): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(55,95): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(55,95): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(55,95): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(55,69): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(55,69): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(55,69): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(55,69): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(55,69): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(75,99): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(75,99): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(75,99): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(75,99): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(75,99): warning C4244:         ]
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(75,68): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(75,68): warning C4244:         with
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(75,68): warning C4244:         [
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(75,68): warning C4244:             T=float
+C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\main.cpp(75,68): warning C4244:         ]
+  RequestToServer.cpp
 C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\SeaBattle\RequestToServer.cpp(40,75): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-  SeaBattle.vcxproj -> C:\Users\BEBERISHKA\Documents\GitHub\SeaBattle\x64\Debug\SeaBattle.exe
+  Создание кода...

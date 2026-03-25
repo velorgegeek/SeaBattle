@@ -9,10 +9,8 @@ private:
     RequestToServer request;
     enum class GameStatus {none,play};
     //none,play,waiting,prepare
-        GameStatus gamestatus = GameStatus::play;
+        GameStatus gamestatus = GameStatus::none;
         enum class blockedCell { add, remove };
-        BoatManager manager;
-        DragBoat dragboat;
         void setBlocked(const std::vector<std::pair<int, int>>& vec, Game::blockedCell status);
         void setPos();
         void changeOrientation(Boat* boat);
@@ -30,12 +28,14 @@ private:
         //
         //checkBoat(int i,int j) == 0 
 public:
+        BoatManager manager;
+        DragBoat dragboat;
         void updateTimerRotate(float time);
         std::vector<Boat*> getBoats();
         std::vector<std::vector<Cell>> playerField;
         std::vector<std::vector<int>> enemyField;
         std::vector<std::pair<int, int>> cordToMap();
 
-        void eventHandler(const sf::Event& event, const sf::RenderWindow& window);
+        void eventHandler(const sf::Event* event, const sf::RenderWindow& window);
         Game();
 };

@@ -24,16 +24,16 @@ void RequestToServer::init() {
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_port = htons(8080);
 
-    int result = inet_pton(AF_INET, "26.160.47.90", &(serverAddress.sin_addr));
-    if (result != 1) {
-        closesocket(clientSocket);
-        WSACleanup();
-    }
+    //int result = inet_pton(AF_INET, "26.160.47.90", &(serverAddress.sin_addr));
+    //if (result != 1) {
+    //    closesocket(clientSocket);
+    //    WSACleanup();
+    //}
 
-    if (connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) == SOCKET_ERROR) {
-        closesocket(clientSocket);
-        WSACleanup();
-    }
+    //if (connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) == SOCKET_ERROR) {
+    //    closesocket(clientSocket);
+    //    WSACleanup();
+    //}
 }
 void RequestToServer::sender(const json& s) {
     std::string reciveJson = s.dump();
