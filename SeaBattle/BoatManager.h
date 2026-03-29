@@ -7,6 +7,7 @@ class BoatManager{
 	std::vector<Boat*> boats;
 	int countDead;
 public:
+	int boatOnMap;
 	BoatManager();
 	void getHit(Boat* boat);
 	void setSprite(const Boat* boat);

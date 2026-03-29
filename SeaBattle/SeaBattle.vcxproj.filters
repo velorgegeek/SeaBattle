@@ -72,9 +72,6 @@
     <ClInclude Include="RequestToServer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="GameScenes.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
