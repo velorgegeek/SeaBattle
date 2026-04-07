@@ -4,7 +4,7 @@
 #include "DragBoat.h"
 #include <vector>
 #include "RequestToServer.h"
-#include <unordered_map>
+#include "PacketType.h"
 #include <string>
 #include "GameScenes.h"
 
@@ -12,8 +12,8 @@ class Game {
 private:
     std::unordered_map<std::string, Scene*> GameScenes;
 
-   Scene* scene = new PrepareScene(this);
-    //Scene* scene = new FightScene(this);
+   //Scene* scene = new PrepareScene(this);
+    Scene* scene = new FightScene(this);
     RequestToServer request;
     enum class GameStatus { none, play };
     //none,play,waiting,prepare
@@ -46,6 +46,7 @@ public:
     void changeOrientationBoat(Boat* boat);
     void updateTimerRotate(float time);
 
+    void sendBoatToServer(const bool& playerReady);
     void shootField(const int& x,const int& y);
     std::vector<std::pair<int, int>> cordToMap();
 

@@ -29,7 +29,8 @@ public:
 };
 
 class FightScene : public Scene {
-
+	sf::Texture hitted;
+	sf::Texture hitBoat;
 public:
 	FightScene(Game* game);
 	void draw(sf::RenderWindow& window) override;

@@ -132,9 +132,26 @@ void Game::setPos() {
     }
     dragboat.undrag();
 }
+void Game::sendBoatToServer(const bool& playerReady) {
+    sf::Packet packet;
+    packet << PacketType::ChangePrepare;
+    packet << playerReady;
+    if (playerReady) {
+        for(const auto boat : getBoats())
+            for (const auto& [x,y] : boat->cordinMap) {
+                packet << x << y;
+            }
+    }
+    
+    request.sender(packet);
+}
 void Game::shootField(const int& x, const int& y) {
     if (enemyField[x][y] == 0) {
-        enemyField[x][y] = 1;
+        sf::Packet packet;
+        packet << PacketType::Shoot;
+        packet << x << y;
+        std::cerr << "SHOOT" << x <<" "<< y<<std::endl;
+        request.sender(packet);
     }
 }
 void Game::setBoatToMap(const std::vector<std::pair<int, int>>& vec,  Boat* boat) {
@@ -167,8 +184,6 @@ void Game::changeOrientation(Boat* boat) {
 
     setBoatToMap(boat->cordinMap, boat);
     setBlocked(boat->cordinMap, Game::blockedCell::add);
-   
-
 }
 sf::FloatRect Game::cordToPos(Boat* boat, int& i, int& j) {
     if (boat->orient == Boat::orientationBoat::Horizontal) {
@@ -185,11 +200,6 @@ sf::FloatRect Game::cordToPos(Boat* boat, int& i, int& j) {
             constant::sizeSquare,
             constant::sizeSquare * boat->countDeck ));
 
-    }
-}
-void Game::hitToEnemyCheck(const int& i, const int& j) {
-    if (enemyField[i][j] == 0) {
-        //attack
     }
 }
 void Game::drag(Boat* boat) {

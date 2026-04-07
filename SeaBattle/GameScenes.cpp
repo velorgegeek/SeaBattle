@@ -38,8 +38,6 @@ void PrepareScene::draw(sf::RenderWindow& window) {
                     rectangle->setFillColor(sf::Color::Yellow);
                 }
                 break;
-            case Cell::status::hitted:
-                rectangle->setFillColor(sf::Color::Cyan);
             }
             if (game->playerField[i][j].boat != nullptr) {
                 rectangle->setFillColor(sf::Color::Red);
@@ -66,6 +64,8 @@ void PrepareScene::eventHandler(const sf::Event* event, const sf::RenderWindow& 
                 auto readyButton = (drawableObj[1]);
                 if (readyButton->getGlobalBounds().contains(worldPos)) {
                     playerReady = !playerReady;
+                    game->sendBoatToServer(playerReady);
+
                 }
             }
             if (!playerReady) {
@@ -128,6 +128,8 @@ FightScene::FightScene(Game* game) : Scene(game) {
 
 
     drawableObj.push_back(rectangle2);
+    hitted = sf::Texture("Dirka.png");
+    hitBoat = sf::Texture("Krestik.png");
 }
 
 void FightScene::draw(sf::RenderWindow& window) {
@@ -156,20 +158,22 @@ void FightScene::draw(sf::RenderWindow& window) {
 
     for (int i = 0; i < 10; ++i) {
         for (int j = 0; j < 10; ++j) {
+            rectangle->setFillColor(sf::Color::White);
             switch (game->enemyField[i][j]) {
             case 0:
-                rectangle->setFillColor(sf::Color::Yellow);
+                rectangle->setFillColor(sf::Color::White);
                 break;
             case 1:
-                rectangle->setFillColor(sf::Color::Cyan);
+                rectangle->setTexture(&hitted);
                 break;
             case 2:
-                rectangle->setFillColor(sf::Color::Black);
+                rectangle->setTexture(&hitBoat);
             case 3: 
                 rectangle->setFillColor(sf::Color::Red);
             }
             rectangle->setPosition(sf::Vector2f(constant::sizeSquare * i + constant::offsetEnemyX, constant::sizeSquare * j + constant::offsetEnemyY));
             window.draw(*rectangle);
+            rectangle->setTexture(nullptr);
         }
     }
 }

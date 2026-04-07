@@ -25,6 +25,7 @@ int main()
             if (event->is<sf::Event::Closed>()) {
                 window.close();
             }
+
             game.eventHandler(&*event, window);
         }
 

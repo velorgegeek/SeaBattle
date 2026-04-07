@@ -1,12 +1,10 @@
-#include "json.hpp"
-#include <Winsock2.h>
-using json = nlohmann::json;
+#include <SFML/Network.hpp>
 
 class RequestToServer {
-	SOCKET clientSocket;
+	sf::TcpSocket socket;
 	void init();
 public:
-	void sender(const json& s);
-	json reciver();
+	void sender(sf::Packet& packet);
+	sf::Packet reciver();
 	RequestToServer();
 };
